@@ -9,7 +9,6 @@ def getHumanInput():
     while True:
         try:
             row = int(input("Enter the ROW that you are going to attack: "))
-            print(row)
             if 0 > row or row > gameBoard.GAME_BOARD_HEIGHT:
                 print(f"ERROR: Invalid Input. Enter a number between 0 - {gameBoard.GAME_BOARD_HEIGHT}")
             else:
@@ -22,7 +21,7 @@ def getHumanInput():
     while True:
         try:
             column = int(input("Enter the COLUMN that you are going to attack: "))
-            if 0 > row or row > gameBoard.GAME_BOARD_WIDTH:
+            if 0 > column or column > gameBoard.GAME_BOARD_WIDTH:
                 print(f"ERROR: Invalid Input. Enter a number between 0 - {gameBoard.GAME_BOARD_WIDTH}")
             else:
                 break
@@ -32,8 +31,8 @@ def getHumanInput():
     return row, column
 
 def getComputerInput():
-    
-    row = random.randint(0,gameBoard.GAME_BOARD_HEIGHT)
-    column = random.randint(0,gameBoard.GAME_BOARD_WIDTH)
+    # randomized computer input for attack coordinates    
+    row = random.randint(0,gameBoard.GAME_BOARD_HEIGHT-1)
+    column = random.randint(0,gameBoard.GAME_BOARD_WIDTH-1)
 
     return row, column

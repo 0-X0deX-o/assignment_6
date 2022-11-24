@@ -1,14 +1,18 @@
 # David Liddle  11-23-22
 # Assignment #6 
 
+# gameBoard module defines the game boards for either the player of computer and returns list of lists of each
+
 import random
 
+# board constants
 GAME_BOARD_WIDTH = 10
 GAME_BOARD_HEIGHT = 10
 
 BOARD_SELECTION_LOW = 1
 BOARD_SELECTION_HIGH = 2
 
+# function that takes user input and returns an integer to select a game board
 def chooseHumanGameBoard(): 
     while True:
         try:
@@ -23,11 +27,15 @@ def chooseHumanGameBoard():
 
     return gameboardChoice
 
-def chooseComputerGameBoard():
-    gameboardChoice = random.randint(BOARD_SELECTION_LOW, BOARD_SELECTION_HIGH)
-    
-    return gameboardChoice
+# function that determines the computers game board with randomization 
+def chooseComputerGameBoard(playerChoice):
+    if (playerChoice == 1): 
+       computerChoice  = 2
+    else:
+        computerChoice = 1
+    return computerChoice
 
+# function that iterates through the lines of a text file and returns a list of lists data structure making it a mutable game board
 def loadGameBoard(gameboardChoice):
 
     # load gameboard from file
@@ -48,6 +56,7 @@ def loadGameBoard(gameboardChoice):
     
     return gameBoard, numTargets
 
+# same as the loadGameBoard but written for the specific targetBoard file
 def loadTargetBoard():
     
     # load targetboard from file
@@ -61,6 +70,7 @@ def loadTargetBoard():
     
     return targetBoard
 
+# function that iterates through a specified game board and returns an ordered matrix/game board
 def printBoard(board, boardWidth, boardHeight):
 
     colCoordinates = " "
@@ -77,8 +87,3 @@ def printBoard(board, boardWidth, boardHeight):
     print('\n')
 
     return
-
-
-targetBoard = loadTargetBoard()
-print(targetBoard)
-printBoard(targetBoard, 10, 10)
