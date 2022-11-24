@@ -1,12 +1,9 @@
-# TODO: Student writes their name at the top of the file (delete this TODO line when completed) (0.5 pt.)
-# <Student Name>             <Date>
-# Assignment #6 Naval Battle
+# David Liddle 11-23-22
+# Assignment 6 
 
 # TODO: Ensure that the assignment is turned in by the due date AND Ensure that the files that gets submitted are called 
 # 'navalBattle.py', 'gameBoard.py', 'gameInput.py', 'gamePlay.py', 'targetBoard.txt', 'board1.txt', and 'board2.txt'.
 # These files should be included in a .zip file called 'navalBattle.zip' (1 pt.)
-
-# NOTE: All of the 'TODO' statements are contained in navalBattle.py, gamePlay.py and gameInput.py.
 
 import gameBoard
 import gamePlay
@@ -47,6 +44,7 @@ def main():
             pass
 
             # Choose which gameboard to use for the COMPUTER player with the chooseComputerGameBoard method in the gameBoard module.
+
             # Assign this to choice to the gameboardChoice variable.
             pass
 

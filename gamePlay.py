@@ -1,5 +1,5 @@
-# Matthew Holman             8-11-2022
-# Assignment #6 Naval Battle
+# David Liddle
+# Assignment #6 
 
 import gameBoard
 import gameInput
