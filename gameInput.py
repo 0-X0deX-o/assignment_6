@@ -1,5 +1,5 @@
 # David Liddle  11-23-22
-# Assignment #6 
+# Assignment 6 
 
 import random
 import gameBoard

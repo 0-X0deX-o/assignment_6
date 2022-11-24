@@ -1,5 +1,5 @@
 # David Liddle  11-23-22
-# Assignment #6 
+# Assignment 6 
 
 # gameBoard module defines the game boards for either the player of computer and returns list of lists of each
 

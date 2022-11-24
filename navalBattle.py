@@ -38,10 +38,15 @@ def main():
             # Run the game by passing in the relevant data to the runGame method of the gamePlay module.
             gamePlay.runGame(humanGameBoard, targetBoard, computerGameBoard, numHumanTargets, numComputerTargets)
         elif choice == "i":
-            # TODO: Print out the instructions for the game (1 pt.)
-            print("These are the instructions")
+            print("1. Enter the letter [p] for 'play'")
+            print("2. The computer will prompt you for what board to choose")
+            print("3. The target board will print to the screen.")
+            print("4. The computer will prompt you to enter a target coordinate for the row you want to attack.")
+            print("5. The computer will prompt you to enter a target coordinate for the column you want to attack.")
+            print("6. Then the computer will take a turn")
+            print("7. You and the computer will take turns until either your or the enemy ships are destroyed")
+            print()
         elif choice == "q":
-            # TODO: set gameOver to be True and print a 'goodbye' message to the player (1 pt.)
             print("Goodbye")
             gameOver = True
         else:

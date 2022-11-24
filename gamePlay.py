@@ -1,5 +1,5 @@
-# David Liddle
-# Assignment #6 
+# David Liddle 11-23-22
+# Assignment 6 
 
 import gameBoard
 import gameInput
@@ -7,8 +7,8 @@ import gameInput
 # function that defines the players turn
 def _humanTurn(humanGameBoard, targetBoard, computerGameBoard, numComputerTargets):
 
-        print("Iti's the human's turn.") # Alert the user of his turn
-    gameBoard.printBoard(targetBoard, gameBoard.GAME_BOARD_WIDTH, gameBoard.GAME_BOARD_HEIGHT) # print the current game board 
+    print("It's the human's turn.") # Alert the user of his turn
+    gameBoard.printBoard(targetBoard, gameBoard.GAME_BOARD_WIDTH - 1, gameBoard.GAME_BOARD_HEIGHT - 1) # print the current game board
     print() 
     while True: # loop that takes user input and determines a 'HIT' or 'MISS'
         playerTargetRow, playerTargetColumn  = gameInput.getHumanInput()
@@ -27,7 +27,7 @@ def _humanTurn(humanGameBoard, targetBoard, computerGameBoard, numComputerTarget
                 computerGameBoard[playerTargetRow][playerTargetColumn] = 'X'
                 print("Your shot was a hit.")
                 numComputerTargets -= 1
-                gameBoard.printBoard(targetBoard, gameBoard.GAME_BOARD_WIDTH, gameBoard.GAME_BOARD_HEIGHT)
+                gameBoard.printBoard(targetBoard, gameBoard.GAME_BOARD_WIDTH - 1, gameBoard.GAME_BOARD_HEIGHT - 1)
             return humanGameBoard, targetBoard, computerGameBoard, numComputerTargets
 
 # function that defines the computer's turn
@@ -37,8 +37,7 @@ def _computerTurn(humanGameBoard, numHumanTargets):
     while True: # loop that determines the computer's shot
         computerTargetRow, computerTargetColumn = gameInput.getComputerInput()
         print(computerTargetRow, computerTargetColumn)
-        gameBoard.printBoard(humanGameBoard, gameBoard.GAME_BOARD_WIDTH, gameBoard.GAME_BOARD_HEIGHT)
-       # print(humanGameBoard[computerTargetRow][computerTargetColumn])
+        gameBoard.printBoard(humanGameBoard, gameBoard.GAME_BOARD_WIDTH - 1, gameBoard.GAME_BOARD_HEIGHT - 1)
         if (humanGameBoard[computerTargetRow][computerTargetColumn] == 'O' or humanGameBoard[computerTargetRow][computerTargetColumn] == 'O'):
             print("Run Again")
             continue
@@ -46,7 +45,7 @@ def _computerTurn(humanGameBoard, numHumanTargets):
             print(f"The PCs target coordinate is ({computerTargetRow},{computerTargetColumn})")
             if (humanGameBoard[computerTargetRow][computerTargetColumn] == '.'):
                 humanGameBoard[computerTargetRow][computerTargetColumn] = 'O'
-                gameBoard.printBoard(humanGameBoard, gameBoard.GAME_BOARD_WIDTH, gameBoard.GAME_BOARD_HEIGHT)
+                gameBoard.printBoard(humanGameBoard, gameBoard.GAME_BOARD_WIDTH - 1, gameBoard.GAME_BOARD_HEIGHT - 1)
                 print("The PCs shot was a miss.")
             else:
                 humanGameBoard[computerTargetRow][computerTargetColumn] = 'X'
